@@ -39,7 +39,7 @@ f = e.split(slp)
 print(f)
 # nb, if i were to do list(e), it will convert each letter and spaces to strings in an array
 
-# list-string, use joint()
+# list-string, use join()
 print(slp.join(f))
 
 new_arr = [-1, 10, -20, 2, -90, 60, 45, 20]

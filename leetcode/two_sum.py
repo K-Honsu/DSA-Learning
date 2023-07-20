@@ -123,3 +123,36 @@ def remove_duplicates(arr):
 
 
 print(remove_duplicates([1, 1, 2, 2, 3, 4, 5]))
+
+# elshad solution
+# def remove_duplicates(lst):
+#     unique_lst = []
+#     seen = set()
+#     for item in lst:
+#         if item not in seen:
+#             unique_lst.append(item)
+#             seen.add(item)
+#     return unique_lst
+
+# my_list = [1, 1, 2, 2, 3, 4, 5]
+# print(remove_duplicates(my_list))  # Output: [1, 2, 3, 4, 5]
+'''
+Write a function to find all pairs of an integer array whose sum is equal to a given number. Do not consider commutative pairs.
+
+Example
+
+pair_sum([2, 4, 3, 5, 6, -2, 4, 7, 8, 9],7)
+Output : ['2+5', '4+3', '3+4', '-2+9']
+'''
+
+
+def pair_sum(myList, sums):
+    new_arr = []
+    for i in range(len(myList)):
+        for k in range(i+1, len(myList)):
+            if myList[i] + myList[k] == sums:
+                new_arr.append(str(myList[i]) + '+' + str(myList[k]))
+    return new_arr
+
+
+print(pair_sum([2, 4, 3, 5, 6, -2, 4, 7, 8, 9], 7))
