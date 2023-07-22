@@ -43,6 +43,7 @@ def accessElement(array, index):
     else:
         print(array[index])
 
+
 accessElement(arr1, 0)
 
 
@@ -51,10 +52,11 @@ def searchElement(array, target):
         if array[i] == target:
             return i
     return -1
+
+
 print('search')
 print(searchElement(arr1, 6))
 print('search end')
-
 
 
 learn = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -63,12 +65,15 @@ learn = [1, 2, 3, 4, 5, 6, 7, 8]
 
 def deleteElement(array, num):
     for i in range(len(array)):
-        if i == num:
-            array.remove(i)
+        print(i)
+        print(num)
+        if num == array[i]:
+            print('True')
+            array.remove(num)
     return array
 
 
-print(deleteElement(learn, 1))
+print(deleteElement(learn, 7))
 
 
 def deleteNum(array, target):
