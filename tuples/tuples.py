@@ -8,3 +8,4 @@ print(newTuple)
 # we can also use the tuple keyword
 newTuple1 = tuple('abcde')
 print(newTuple1)
+print(newTuple)
