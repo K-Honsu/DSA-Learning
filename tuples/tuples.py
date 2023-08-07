@@ -35,3 +35,5 @@ def searchTuple(tup, element):
     return f"The element {element} was not found"
 
 print(searchTuple(tupel, 'c'))
+
+print(3<3)
