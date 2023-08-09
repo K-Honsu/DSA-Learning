@@ -98,13 +98,15 @@ class LinkedList:
                     self.tail = prev
                 else:
                     prev.next = current.next
+                    # current.next = None
             else:
                 # Add current node's value to the obj dictionary
                 obj[current.value] = True
                 prev = current
 
             current = current.next
-        print(obj)
+        # print(obj)
+        return prev
 
     
 
@@ -117,6 +119,12 @@ new_linked.append(20)
 new_linked.append(30)
 new_linked.append(30)
 new_linked.append(40)
+new_linked.append(30)
+new_linked.append(80)
+new_linked.append(100)
+new_linked.append(80)
+new_linked.append(90)
+
 # print(new_linked.remove(2))
 # print(new_linked.middle())
 # print(new_linked.remove(2))
