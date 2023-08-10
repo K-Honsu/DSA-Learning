@@ -52,11 +52,27 @@ class Solution:
                     maxProfit = potentialProfit
         return maxProfit
     
+
 class Solution:
-    def isValid(self, s: str) -> bool:
-        dic = {'(':')', '{':'}','[':']'}
-        sl = s.split(' ')
-        print(sl)
-        
-s = Solution()
-s.isValid("()[]{}")
+    def removeElement(self, nums: list[int], val: int) -> int:
+        first = 0
+        last = len(nums) -1
+
+        while first <= last:
+            if nums[first] == val:
+                # print(nums[first])
+                nums[first], nums[last] = nums[last], nums[first]
+                # print(nums[last], nums[first])
+                last -= 1
+            else:
+                first += 1
+        return first
+    
+    def isPalindrome(self, x: int) -> bool:
+        # print(sorted(str(x)))
+        print(''.join(reversed(str(x))))
+        print(x)
+        return str(x) == ''.join(reversed(str(x)))
+new = Solution()
+# print(new.removeElement([0,1,2,2,3,0,4,2], 2))
+print(new.isPalindrome(121))

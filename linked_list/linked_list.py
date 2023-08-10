@@ -142,6 +142,19 @@ class LinkedList:
         self.head = None
         self.tail = None
         self.length = 0
+        
+    def getNthtoKthElement(self, n):
+        pointer1 = self.head
+        pointer2 = self.head
+        
+        for _ in range(n):
+            if pointer2 is not None:
+                pointer2 = pointer2.next
+                
+        while pointer2:
+            pointer1 = pointer1.next
+            pointer2 = pointer2.next
+        return pointer1.value
             
 
         
@@ -153,14 +166,15 @@ new_linked.prepend(18)
 new_linked.insert(1,11)
 new_linked.insert(1,20)
 new_linked.set_value(2,1000)
-new_linked.traverse()
+# new_linked.traverse()
 # print(new_linked)
 # new_linked.pop_first()
+print(new_linked.getNthtoKthElement(5))
 # new_linked.reverse()
 print(new_linked)
-print(new_linked.remove(-1))
-print(new_linked.remove(-1))
+# print(new_linked.remove(-1))
+# print(new_linked.remove(-1))
 # new_linked.delete_all()
-print(new_linked)
+# print(new_linked)
 # print(new_linked.search(20))
 # print(new_linked.get(-1))
