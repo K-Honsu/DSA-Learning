@@ -155,7 +155,23 @@ class LinkedList:
             pointer1 = pointer1.next
             pointer2 = pointer2.next
         return pointer1.value
+    
+    def partition(self, ll, x):
+        current = ll.head
+        ll.tail = ll.head
+        while current:
+            nextNode = current.next
+            current.next = None
             
+            if current.value < x:
+                current.next = ll.head
+                ll.head = current
+            else:
+                ll.tail.next = current
+                ll.tail = current
+            current = nextNode
+        if ll.tail.next is not None:
+            ll.tail.next = None
 
         
 new_linked = LinkedList()
@@ -170,11 +186,14 @@ new_linked.set_value(2,1000)
 # print(new_linked)
 # new_linked.pop_first()
 print(new_linked.getNthtoKthElement(5))
+print(new_linked.partition(new_linked, 10))
 # new_linked.reverse()
 print(new_linked)
+# print(len(new_linked))
 # print(new_linked.remove(-1))
 # print(new_linked.remove(-1))
 # new_linked.delete_all()
 # print(new_linked)
 # print(new_linked.search(20))
 # print(new_linked.get(-1))
+print(7//2)
