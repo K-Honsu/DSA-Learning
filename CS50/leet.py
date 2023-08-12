@@ -37,3 +37,36 @@ def plus1One(digits):
 
 print(plus1One([1,2,3,9]))
 print(10//10)
+
+class Solution:
+    def search(self, nums: list[int], target: int) -> int:
+        first , last = 0, len(nums) -1
+        while first <= last:
+            middle = first + (last - first) // 2 
+            if nums[middle] == target:
+                return middle
+            elif nums[middle] >= nums[first]:
+                if target >= nums[first] and target < nums[middle]:
+                    last = middle - 1
+                else:
+                    first = middle + 1
+            else:
+                if target > nums[middle] and target <= nums[last]:
+                    first = middle + 1
+                else:
+                    last = middle - 1
+        return -1
+    
+print(1//2)
+    # first,last = 0, len(nums) -1
+    #     while first <= last:
+    #         middle = first + (last - first) //2 
+    #         if nums[middle] == target:
+    #             return nums[middle]
+    #         elif nums[middle] > target:
+    #             first = middle + 1
+    #             if target in nums[first:]:
+    #                 return nums[target]
+    #         else:
+    #             last = middle -1
+    #     return -1

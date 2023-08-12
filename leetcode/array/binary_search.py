@@ -10,7 +10,9 @@ def recursiveBinarySearch(arr, value):
     elif value < midpoint:
         return recursiveBinarySearch(arr[:midpoint],value)
     return f'value not found in the array'
-        
+
+import math
+math.floor
     
 # print(recursiveBinarySearch([1,2,3,4,9,4,5,6], 20))
 
@@ -75,3 +77,17 @@ x = [[name,phone] for name,phone in zip(arr,arrr)]
 #     # Move the pointers to the next elements
 #     pointer1 += 1
 #     pointer2 += 1
+
+def BS(arr, value):
+    first, last = 0, len(arr) -1
+    while first <= last:
+        middle = (first+last)//2
+        if arr[middle] == value:
+            return f'The value {value} is at index and is located at {[middle]}'
+        elif arr[middle] < value:
+            first = middle + 1
+        else:
+            last = middle - 1
+    return -1
+
+print(BS([1,2,4,5,6,7,8,9], 1))
