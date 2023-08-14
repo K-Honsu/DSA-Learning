@@ -41,11 +41,11 @@ class Stack:
     
     
 stk = Stack()
-stk.push(12)
-stk.push(21)
-stk.push(10)
+print(stk.push(12))
+print(stk.push(21))
+print(stk.push(10))
 stk.isEmpty()
-stk.pop()
+print(stk.pop())
 print(stk.peek())
 print(stk)
 
