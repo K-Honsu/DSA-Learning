@@ -121,6 +121,38 @@ class Solution(object):
         leng = len(arr) // 2
         pointer = leng
         return pointer
+    
+    def findMergeNode(head1, head2):
+        length1 = 0
+        length2 = 0
+        current1 = head1
+        current2 = head2
+        
+        while current1:
+            length1 += 1
+            current1 = current1.next
+            
+        while current2:
+            length2 += 1
+            current2 = current2.next
+        
+        length_diff = abs(length1 - length2)
+        
+        current1 = head1
+        current2 = head2
+        
+        if length1 > length2:
+            for _ in range(length_diff):
+                current1 = current1.next
+        else:
+            for _ in range(length_diff):
+                current2 = current2.next
+        
+        while current1 != current2:
+            current1 = current1.next
+            current2 = current2.next
+            
+        return current1.data
         
             
 # new_linked = Solution()

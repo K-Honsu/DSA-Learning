@@ -106,7 +106,10 @@ class LinkedList:
 
             current = current.next
         # print(obj)
-        return prev
+        # return prev.next
+        while prev:
+            print(prev)
+            prev = prev.next
 
     
 

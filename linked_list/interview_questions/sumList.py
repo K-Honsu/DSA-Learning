@@ -14,9 +14,10 @@ def sumList(lis1, lis2):
         if n2:
             result += n2.value
             n2 = n2.next
-    ll.add(int(result % 10))
+    ll.addToBack(int(result % 10))
     carry = result / 10
         
     return ll
+
             
              

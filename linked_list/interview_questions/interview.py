@@ -32,21 +32,20 @@ class LinkedList:
             current = current.next
         return result
     
-    def add(self,value):
+    def addToBack(self,value):
+        newNode = Node(value)
         if self.head is None:
-            newNode = Node(value)
             self.head = newNode
             self.tail = newNode
         else:
-            newNode1 = Node(value)
-            self.tail.next = newNode1
-            self.tail = newNode1
+            self.tail.next = newNode
+            self.tail = newNode
             
     def generate(self,n,min_value,max_value):
         self.head = None
         self.tail = None
         for _ in range(n):
-            self.add(randint(min_value,max_value))
+            self.addToBack(randint(min_value,max_value))
         return self
     
     
